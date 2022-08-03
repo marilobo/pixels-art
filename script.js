@@ -1,6 +1,9 @@
 const quadradoPixels = document.getElementById('pixel-board');
-let corPreta = document.getElementById('black');
-let classSelected = document.get
+const cor1 = document.getElementById('black');
+cor1.classList.add('selected');
+const cor2 = document.getElementById('lavender');
+const cor3 = document.getElementById('violet');
+const cor4 = document.getElementById('lumber');
 
 for (let index = 1; index < 6; index += 1) {
   let criaSection = document.createElement('section');
@@ -14,4 +17,13 @@ for (let index = 1; index < 6; index += 1) {
   }
 }
 
+function trocaSelect(evento) {
+    const elemSelected = document.querySelector('.selected');
+    elemSelected.classList.remove('selected');
+    evento.target.classList.add('selected');
+}
 
+cor1.addEventListener('click', trocaSelect);
+cor2.addEventListener('click', trocaSelect);
+cor3.addEventListener('click', trocaSelect);
+cor4.addEventListener('click', trocaSelect);
