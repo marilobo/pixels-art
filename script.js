@@ -7,22 +7,22 @@ const cor4 = document.getElementById('lumber');
 const guardaPixel = document.getElementsByClassName('pixel');
 
 for (let index = 1; index < 6; index += 1) {
-  let criaSection = document.createElement('section');
+  const criaSection = document.createElement('section');
   criaSection.className = 'blocosPx';
   quadradoPixels.appendChild(criaSection);
 
   for (let i = 0; i < 5; i += 1) {
-    let colunaDiv = document.createElement('div');
+    const colunaDiv = document.createElement('div');
     colunaDiv.className = 'pixel';
-    let sectionPai = document.getElementsByTagName('section')[index];
+    const sectionPai = document.getElementsByTagName('section')[index];
     sectionPai.appendChild(colunaDiv);
   }
 }
 
 function trocaSelect(evento) {
-    const elemSelected = document.querySelector('.selected');
-    elemSelected.classList.remove('selected');
-    evento.target.classList.add('selected');
+  const elemSelected = document.querySelector('.selected');
+  elemSelected.classList.remove('selected');
+  evento.target.classList.add('selected');
 }
 
 cor1.addEventListener('click', trocaSelect);
@@ -30,9 +30,9 @@ cor2.addEventListener('click', trocaSelect);
 cor3.addEventListener('click', trocaSelect);
 cor4.addEventListener('click', trocaSelect);
 
-function trocaCor (parametro) {
+function trocaCor(parametro) {
   const selectedElem = document.querySelector('.selected');
-  let idColor = selectedElem.id;
+  const idColor = selectedElem.id;
   parametro.target.id = idColor;
 }
 
