@@ -40,3 +40,11 @@
 #lumber {
   background-color: rgb(255, 223, 211);
 }
+
+#clear {
+  background-color: white;
+}
+
+#clear-board {
+    margin: 20px;
+}

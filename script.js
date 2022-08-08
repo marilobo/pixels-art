@@ -5,20 +5,34 @@ const cor2 = document.getElementById('lavender');
 const cor3 = document.getElementById('violet');
 const cor4 = document.getElementById('lumber');
 const guardaPixel = document.getElementsByClassName('pixel');
+const input = document.getElementById('board-size');
+const botaoVQV = document.getElementById('generate-board');
+let n = 5;
 
-for (let index = 1; index < 6; index += 1) {
+// gera blocos de pixel
+function criaBlocos(numberOfPixels){
+for (let index = 0; index < numberOfPixels; index += 1) {
   const criaSection = document.createElement('section');
   criaSection.className = 'blocosPx';
   quadradoPixels.appendChild(criaSection);
 
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < numberOfPixels; i += 1) {
     const colunaDiv = document.createElement('div');
     colunaDiv.className = 'pixel';
     const sectionPai = document.getElementsByTagName('section')[index];
     sectionPai.appendChild(colunaDiv);
   }
 }
+}
+criaBlocos(n);
 
+// function pixelSize() {
+//   criaBlocos(input.value);
+// }
+
+// botaoVQV.addEventListener('click', pixelSize);
+
+//Define apenas uma cor da paleta para ter a classe selected 
 function trocaSelect(evento) {
   const elemSelected = document.querySelector('.selected');
   elemSelected.classList.remove('selected');
@@ -30,6 +44,7 @@ cor2.addEventListener('click', trocaSelect);
 cor3.addEventListener('click', trocaSelect);
 cor4.addEventListener('click', trocaSelect);
 
+// Permite pintar os pixels com as cores da paleta
 function trocaCor(parametro) {
   const selectedElem = document.querySelector('.selected');
   const idColor = selectedElem.id;
@@ -37,5 +52,16 @@ function trocaCor(parametro) {
 }
 
 for (let index = 0; index < guardaPixel.length; index += 1) {
-  guardaPixel[index].addEventListener('click', trocaCor);
+  guardaPixel[index].addEventListener('click', trocaCor)
 }
+// Implementa o botão de limpar
+const guardaBotao = document.getElementById('clear-board');
+
+function limpar() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].id = 'clear';
+  }
+}
+guardaBotao.addEventListener('click', limpar);
+
