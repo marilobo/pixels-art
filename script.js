@@ -1,17 +1,16 @@
-const quadradoPixels = document.getElementById('pixel-board');
-const cor1 = document.getElementById('black');
-cor1.classList.add('selected');
-const cor2 = document.getElementById('lavender');
-const cor3 = document.getElementById('violet');
-const cor4 = document.getElementById('lumber');
-const guardaPixel = document.getElementsByClassName('pixel');
-const input = document.getElementById('board-size');
-const botaoVQV = document.getElementById('generate-board');
+const quadradoPixels = document.getElementById("pixel-board");
+const cor1 = document.getElementById("black");
+cor1.classList.add("selected");
+const cor2 = document.getElementById("lavender");
+const cor3 = document.getElementById("violet");
+const cor4 = document.getElementById("lumber");
+const input = document.getElementById("board-size");
+const botaoVQV = document.getElementById("generate-board");
 let n = 5;
 
 function seccionar() {
-  const criaSection = document.createElement('section');
-  criaSection.className = 'blocosPx';
+  const criaSection = document.createElement("section");
+  criaSection.className = "blocosPx";
   quadradoPixels.appendChild(criaSection);
 }
 
@@ -21,9 +20,9 @@ function criaBlocos(numberOfPixels) {
     seccionar();
 
     for (let i = 0; i < numberOfPixels; i += 1) {
-      const colunaDiv = document.createElement('div');
-      colunaDiv.className = 'pixel';
-      const sectionPai = document.getElementsByTagName('section')[index];
+      const colunaDiv = document.createElement("div");
+      colunaDiv.className = "pixel";
+      const sectionPai = document.getElementsByTagName("section")[index];
       sectionPai.appendChild(colunaDiv);
     }
   }
@@ -31,49 +30,58 @@ function criaBlocos(numberOfPixels) {
 criaBlocos(n);
 
 function descriaBlocos() {
-
-while (quadradoPixels.hasChildNodes()) {
-  quadradoPixels.removeChild(quadradoPixels.firstChild);
-}
+  while (quadradoPixels.hasChildNodes()) {
+    quadradoPixels.removeChild(quadradoPixels.firstChild);
+  }
 }
 
 function pixelSize() {
   descriaBlocos();
   n = input.value;
   criaBlocos(n);
+  colorChange();
 }
 
-botaoVQV.addEventListener('click', pixelSize);
+botaoVQV.addEventListener("click", pixelSize);
 
 //Define apenas uma cor da paleta para ter a classe selected
 function trocaSelect(evento) {
-  const elemSelected = document.querySelector('.selected');
-  elemSelected.classList.remove('selected');
-  evento.target.classList.add('selected');
+  const elemSelected = document.querySelector(".selected");
+  elemSelected.classList.remove("selected");
+  evento.target.classList.add("selected");
 }
 
-cor1.addEventListener('click', trocaSelect);
-cor2.addEventListener('click', trocaSelect);
-cor3.addEventListener('click', trocaSelect);
-cor4.addEventListener('click', trocaSelect);
+cor1.addEventListener("click", trocaSelect);
+cor2.addEventListener("click", trocaSelect);
+cor3.addEventListener("click", trocaSelect);
+cor4.addEventListener("click", trocaSelect);
 
 // Permite pintar os pixels com as cores da paleta
+let guardaPixel = document.getElementsByClassName("pixel");
+
 function trocaCor(parametro) {
-  const selectedElem = document.querySelector('.selected');
+  
+  const selectedElem = document.querySelector(".selected");
   const idColor = selectedElem.id;
   parametro.target.id = idColor;
+  console.log(parametro.target);
 }
 
-for (let index = 0; index < guardaPixel.length; index += 1) {
-  guardaPixel[index].addEventListener('click', trocaCor);
-}
-// Implementa o botão de limpar
-const guardaBotao = document.getElementById('clear-board');
-
-function limpar() {
-  const pixels = document.getElementsByClassName('pixel');
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].id = 'clear';
+function colorChange() {
+  guardaPixel = document.getElementsByClassName("pixel");
+  for (let index = 0; index < guardaPixel.length; index += 1) {
+    guardaPixel[index].addEventListener("click", trocaCor);
   }
 }
-guardaBotao.addEventListener('click', limpar);
+colorChange();
+
+// Implementa o botão de limpar
+const guardaBotao = document.getElementById("clear-board");
+
+function limpar() {
+  const pixels = document.getElementsByClassName("pixel");
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].id = "clear";
+  }
+}
+guardaBotao.addEventListener("click", limpar);
