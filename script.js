@@ -37,13 +37,12 @@ function descriaBlocos() {
 
 function pixelSize() {
   descriaBlocos();
+  req11();
   n = input.value;
   criaBlocos(n);
   colorChange();
-  if (input.value === '') {
-    alert('Board inválido!');
-    }
-}
+  }
+
 
 botaoVQV.addEventListener('click', pixelSize);
 
@@ -86,3 +85,13 @@ function limpar() {
   }
 }
 guardaBotao.addEventListener('click', limpar);
+
+function req11() {
+  if (input.value === '') {
+    alert('Board inválido!');}
+  else if (input.value < 5) {
+    input.value = 5;
+  } else if (input.value > 50) {
+    input.value = 50;
+  }
+}
