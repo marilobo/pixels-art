@@ -3,21 +3,30 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  font-family: 'Silkscreen', cursive;
+}
+
+body {
+  background: #FEE3C6;
+  background-size: 400% 300%;
 }
 
 .color {
   display: inline-block;
   width: 40px;
   height: 40px;
-  border: solid black 1px;
+  border: solid black 1.5px;
+  border-radius: 100%;
 }
 
 .pixel {
   width: 40px;
   height: 40px;
-  border: solid black 1px;
+  border: solid black 1.5px;
   display: inline-block;
   background-color: white;
+  margin: 1px;
+  border-radius: 10%;
 }
 .blocosPx {
   margin: 0px;
@@ -46,5 +55,32 @@
 }
 
 #clear-board {
-    margin: 20px;
+  margin: 20px;
+  width: 110px;
+  border-radius: 8%;
+  background-color: rgb(247, 245, 232);
+}
+
+button, input {
+  cursor: pointer;
+}
+
+#title {
+  margin: 30px;
+}
+
+#generate-board {
+  width: 50px;
+  border-radius: 12%;
+  margin-top: 20px;
+  background-color: rgb(247, 245, 232);
+}
+
+#board-size {
+  border-radius: 10%;
+  background-color: rgb(247, 245, 232);
+}
+
+#color-palette div:hover, #generate-board:hover, #clear-board:hover {
+  border: solid rgb(124, 123, 123) 1px;
 }

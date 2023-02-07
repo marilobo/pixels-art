@@ -41,8 +41,7 @@ function pixelSize() {
   n = input.value;
   criaBlocos(n);
   colorChange();
-  }
-
+}
 
 botaoVQV.addEventListener('click', pixelSize);
 
@@ -86,12 +85,24 @@ function limpar() {
 }
 guardaBotao.addEventListener('click', limpar);
 
+// Limita alterações do board-size
 function req11() {
   if (input.value === '') {
-    alert('Board inválido!');}
-  else if (input.value < 5) {
+    alert('Board inválido!');
+  } else if (input.value < 5) {
     input.value = 5;
   } else if (input.value > 50) {
     input.value = 50;
   }
+}
+
+//https://www.youtube.com/watch?v=E5qWEY1GVQ0&t=504s
+function randomColors() {
+  const chars = '0123456789abcdf';
+  let color = '#';
+
+  for (let index = 0; index < 6; index += 1) {
+    color += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return color;
 }
