@@ -1,13 +1,32 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Pixels Art
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+https://pixels-art-brown.vercel.app/
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Este foi um dos primeiros projetos realizados durante o módulo de Fundamentos do curso de Desenvolvimento Web da Trybe. Eu estava começando a aprender JS e DOM. Para o seu desenvolvimento, utilizamos JavaScript, HTML e CSS.
+
+<strong>Os arquivos index.html, script.js e style.css foram desenvolvidos por mim. O restante da aplicação é de autoria da Trybe.</strong>
+
+<details>
+<summary><strong>O que foi desenvolvido</strong></summary><br />
+Neste projeto foi desenvolvido um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e poderá pintar o que quiser em um quadro branco.
+</details>
+<details>
+<summary><strong>:memo: Habilidades</strong></summary>
+
+* JavaScript
+* HTML
+* CSS
+
+</details>
+<details>
+<summary><strong>Instalação</strong></summary><br />
+1. Clone o repositório
+
+* Use o comando: git clone git@github.com:marilobo/trybewallet.git
+
+* Entre na pasta do repositório que você acabou de clonar
+
+2. Instale as dependências
+
+* npm install
+</details>
